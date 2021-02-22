@@ -4,6 +4,11 @@ $header = include("header.php");
 include "class/webpage.class.php";
 include "requete_sql.php";
 
+if(isset($_POST["background"]) && !empty($_POST["background"])){
+    setBackground($_POST["background"]);
+    header("location:background.php");
+}
+
 $html = $header;
 
 $html .= <<<HTML
@@ -22,7 +27,14 @@ HTML;
 
 $html .= <<<HTML
         </div>
-        <button type="button" class="btn btn-success mt-2">Ajouter un background</button>
+        <button type="button" class="btn btn-success mt-2" onclick="document.getElementById('b_form').style.display='block'">Ajouter un background</button>
+        <form method="post" style="display:none" id="b_form">
+            <div>
+                <label for="background">Entrez votre background : </label>
+                <textarea name="background" class="w-100" style="height : 200px"></textarea>
+                <button type="submit" style="float:right;">Valider</button>
+            </div>
+        </form>
     </div>
     
 

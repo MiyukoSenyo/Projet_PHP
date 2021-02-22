@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,5 +15,5 @@
     display: inline;
     color: blue;
     text-align: center;
-    width: 25%;
+    width: 20%;
 }
